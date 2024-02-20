@@ -1,16 +1,38 @@
-# pics
+# Udemy - Dart and Flutter: The Complete Developer's Guide
 
-A new Flutter project.
+https://www.udemy.com/course/dart-and-flutter-the-complete-developers-guide/
 
-## Getting Started
+Everything you need to know for building mobile apps with Flutter and Dart, including RxDart and Animations!
 
-This project is a starting point for a Flutter application.
+Created by Stephen Grider
 
-A few resources to get you started if this is your first Flutter project:
+## Course Contents
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* Let's dive in
+* A Dart Introduction
+* Staying on Target with Dart
+* Flutter Environment Setup - MacOS
+* MacOS Setup - Android
+* MacOS Setup - iOS
+* Flutter Setup - PC
+* App Building Time
+* State Design with Flutter Apps
+* High-Level Dart
+* HTTP Requests with Flutter
+* Forms and Validation with Flutter
+* Reactive Programming with Dart
+* Advanced Flutter Architecture - The Bloc Pattern
+* Consuming BLOC Data
+* RxDart for Reactive Programming
+* Building Delightful Animaations
+* Performant Data Fetching
+* Testing with Flutter and Dart
+* Offline Data Storage
+* Type Design
+* On Demand Widget Rendering
+* Navigation with Flutter
+* Appendix One: Building Open Source with Dart
+* Appendix Two: Building a Dart CLI
+* Extras
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
