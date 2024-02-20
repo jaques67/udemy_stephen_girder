@@ -10,8 +10,16 @@ class LoginScreen extends StatefulWidget {
 class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Container(
+      margin: const EdgeInsets.all(20.0),
+      child: Form(
+          child: Column(
+            children: [
+
+            ],
+          ),
+      ),
+    );
   }
 }
 
