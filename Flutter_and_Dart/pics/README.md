@@ -19,20 +19,6 @@ Created by Stephen Grider
 * State Design with Flutter Apps
 * High-Level Dart
 * HTTP Requests with Flutter
-* Forms and Validation with Flutter
-* Reactive Programming with Dart
-* Advanced Flutter Architecture - The Bloc Pattern
-* Consuming BLOC Data
-* RxDart for Reactive Programming
-* Building Delightful Animaations
-* Performant Data Fetching
-* Testing with Flutter and Dart
-* Offline Data Storage
-* Type Design
-* On Demand Widget Rendering
-* Navigation with Flutter
-* Appendix One: Building Open Source with Dart
-* Appendix Two: Building a Dart CLI
-* Extras
+
 
 
