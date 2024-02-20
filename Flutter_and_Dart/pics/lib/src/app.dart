@@ -21,8 +21,8 @@ class AppState extends State<App> {
     final uri = Uri.parse(
         'https://jsonplaceholder.typicode.com/photos/$counter'
     );
-    var response = await get(uri);
-    var imageModel = ImageModel.fromJson(json.decode(response.body));
+    final response = await get(uri);
+    final imageModel = ImageModel.fromJson(json.decode(response.body));
 
     setState(() {
       images.add(imageModel);
