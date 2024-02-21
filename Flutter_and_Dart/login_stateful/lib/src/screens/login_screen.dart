@@ -42,6 +42,9 @@ class LoginScreenState extends State<LoginScreen> {
             ? 'Please enter valid email'
             : null;
       },
+      onSaved: (String? value) {
+        print(value);
+      },
     );
   }
 
@@ -57,6 +60,9 @@ class LoginScreenState extends State<LoginScreen> {
             ? 'Password must be at least 4 characters.'
             : null;
       },
+      onSaved: (String? value) {
+        print(value);
+      },
     );
   }
 
@@ -66,7 +72,9 @@ class LoginScreenState extends State<LoginScreen> {
 
     return ElevatedButton(
       onPressed: () {
-        formKey.currentState?.validate();
+        if (formKey.currentState!.validate()) {
+          formKey.currentState?.save();
+        }
       },
       style: style,
       child: const Text('Submit!'),
