@@ -54,7 +54,9 @@ class LoginScreenState extends State<LoginScreen> {
     ElevatedButton.styleFrom(backgroundColor: Colors.blue);
 
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        formKey.currentState?.reset();
+      },
       style: style,
       child: const Text('Submit!'),
     );
