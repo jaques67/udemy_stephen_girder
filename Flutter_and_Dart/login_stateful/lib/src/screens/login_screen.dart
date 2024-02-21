@@ -20,7 +20,9 @@ class LoginScreenState extends State<LoginScreen> {
           children: [
             emailField(),
             passwordField(),
-            Container(margin: const EdgeInsets.only(top: 25.0),),
+            Container(
+              margin: const EdgeInsets.only(top: 25.0),
+            ),
             submitButton(),
           ],
         ),
@@ -35,6 +37,11 @@ class LoginScreenState extends State<LoginScreen> {
         labelText: 'Email Address',
         hintText: 'you@example.com',
       ),
+      validator: (String? value) {
+        return (value != null && !value.contains('@'))
+            ? 'Please enter valid email'
+            : null;
+      },
     );
   }
 
@@ -45,17 +52,21 @@ class LoginScreenState extends State<LoginScreen> {
         labelText: 'Password',
         hintText: 'Password',
       ),
+      validator: (String? value) {
+        return (value != null && value.length < 4)
+            ? 'Password must be at least 4 characters.'
+            : null;
+      },
     );
   }
 
   Widget submitButton() {
-
     final ButtonStyle style =
-    ElevatedButton.styleFrom(backgroundColor: Colors.blue);
+        ElevatedButton.styleFrom(backgroundColor: Colors.blue);
 
     return ElevatedButton(
       onPressed: () {
-        formKey.currentState?.reset();
+        formKey.currentState?.validate();
       },
       style: style,
       child: const Text('Submit!'),
