@@ -63,10 +63,8 @@ class LoginScreen extends StatelessWidget {
       builder: (context, snapshot) {
         return ElevatedButton(
           onPressed: snapshot.hasData
-              ? () {
-                  print('Hi there');
-                }
-                : null,
+              ? bloc.submit
+              : null,
           style: style,
           child: const Text('Login'),
         );
