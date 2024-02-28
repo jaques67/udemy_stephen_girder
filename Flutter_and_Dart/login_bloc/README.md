@@ -23,7 +23,7 @@ Created by Stephen Grider
 * ~~Reactive Programming with Dart~~
 * ~~Advanced Flutter Architecture - The Bloc Pattern~~
 * ~~Consuming BLOC Data~~
-* RxDart for Reactive Programming
+* ~~RxDart for Reactive Programming~~
 * Building Delightful Animations
 * Performant Data Fetching
 * Testing with Flutter and Dart
