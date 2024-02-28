@@ -8,7 +8,15 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   @override
   Widget build(context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Animation!'),
+      ),
+      body: buildAnimation(),
+    );
+  }
+
+  Widget buildAnimation() {
+
   }
 }
