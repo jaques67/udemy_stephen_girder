@@ -15,10 +15,10 @@ class Bloc {
   final passwordController = StreamController<String>();
 
   // Add data to a stream
-  get changeEmail => emailController.sink.add;
-  get changePassword => passwordController.sink.add;
+  Function(String) get changeEmail => emailController.sink.add;
+  Function(String) get changePassword => passwordController.sink.add;
 
   // Retrieve data from a stream
-  get email => emailController.stream;
-  get password => passwordController.stream;
+  Stream<String> get email => emailController.stream;
+  Stream<String> get password => passwordController.stream;
 }
