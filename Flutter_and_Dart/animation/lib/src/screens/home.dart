@@ -6,15 +6,18 @@ class Home extends StatefulWidget {
   HomeState createState() => HomeState();
 }
 
-class HomeState extends State<Home> {
-  Animation<double> catAnimation;
-  AnimationController catController;
+class HomeState extends State<Home> with TickerProviderStateMixin {
+  late Animation<double> catAnimation;
+  late AnimationController catController;
 
   @override
   initState() {
     super.initState();
 
-
+    catController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
   }
 
   @override
