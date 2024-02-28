@@ -25,7 +25,9 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
         curve: Curves.easeIn,
       ),
     );
+  }
 
+  onTap() {
     catController.forward();
   }
 
@@ -35,7 +37,10 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
       appBar: AppBar(
         title: const Text('Animation!'),
       ),
-      body: buildAnimation(),
+      body: GestureDetector(
+        onTap: onTap,
+        child: buildAnimation(),
+      ),
     );
   }
 
@@ -51,4 +56,6 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
       child: Cat(),
     );
   }
+
+
 }
