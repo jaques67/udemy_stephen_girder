@@ -40,7 +40,12 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
   Widget buildAnimation() {
     return AnimatedBuilder(
       animation: catAnimation,
-      builder: (context, child) {},
+      builder: (context, child) {
+        return Container(
+          margin: EdgeInsets.only(top: catAnimation.value),
+          child: child,
+        );
+      },
       child: Cat(),
     );
   }
