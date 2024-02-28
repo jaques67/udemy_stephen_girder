@@ -7,11 +7,21 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+  Animation<double> catAnimation;
+  AnimationController catController;
+
+  @override
+  initState() {
+    super.initState();
+
+
+  }
+
   @override
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animation!'),
+        title: const Text('Animation!'),
       ),
       body: buildAnimation(),
     );
