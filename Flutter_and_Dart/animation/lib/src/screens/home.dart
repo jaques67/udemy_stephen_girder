@@ -28,7 +28,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
     ).animate(
       CurvedAnimation(
         parent: boxController,
-        curve: Curves.linear,
+        curve: Curves.easeInOut,
       ),
     );
     boxAnimation.addStatusListener((status) {
@@ -144,7 +144,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
         builder: (context, child) {
           return Transform.rotate(
             alignment: Alignment.topRight,
-            angle: boxAnimation.value,
+            angle: -boxAnimation.value,
             child: child,
           );
         },
