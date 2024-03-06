@@ -17,7 +17,7 @@ class NewsApiProvider {
 
   fetchItem(int id) async {
     final response = await client
-        .get('$_root/item/$id.json' as Uri);
+        .get(Uri.parse('$_root/item/$id.json'));
     final parsedJson = jsonDecode(response.body);
 
     return ItemModel.fromJSON(parsedJson);

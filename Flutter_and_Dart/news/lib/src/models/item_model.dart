@@ -15,16 +15,16 @@ class ItemModel {
 
   ItemModel.fromJSON(Map<String, dynamic> parsedJSon)
     : id = parsedJSon['id'],
-      deleted = parsedJSon['deleted'],
-      type = parsedJSon['type'],
-      by = parsedJSon['by'],
-      time = parsedJSon['time'],
-      text = parsedJSon['text'],
-      dead = parsedJSon['dead'],
-      parent = parsedJSon['parent'],
-      kids = parsedJSon['kids'],
-      url = parsedJSon['url'],
-      score = parsedJSon['score'],
-      title = parsedJSon['title'],
-      descendants = parsedJSon['descendants'];
+      deleted = parsedJSon['deleted'] ?? false,
+      type = parsedJSon['type'] ?? '',
+      by = parsedJSon['by'] ?? '',
+      time = parsedJSon['time'] ?? 0,
+      text = parsedJSon['text'] ?? '',
+      dead = parsedJSon['dead'] ?? false,
+      parent = parsedJSon['parent'] ?? 0,
+      kids = parsedJSon['kids'] ?? [],
+      url = parsedJSon['url'] ?? '',
+      score = parsedJSon['score'] ?? 0,
+      title = parsedJSon['title'] ?? '',
+      descendants = parsedJSon['descendants'] ?? 0;
 }
