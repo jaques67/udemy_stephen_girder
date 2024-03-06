@@ -15,7 +15,12 @@ class NewsDbProvider {
       path,
       version: 1,
       onCreate: (Database newDb, int version) {
-
+        newDb.execute("""
+          CREATE TABLE Items (
+            
+          )
+        """
+        )
       },
     );
   }
