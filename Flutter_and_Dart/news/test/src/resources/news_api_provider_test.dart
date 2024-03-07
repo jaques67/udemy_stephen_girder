@@ -21,6 +21,18 @@ void main() {
     newsApi.client = MockClient((request) async {
       final jsonMap = {
         'id': 123,
+        'deleted' : false,
+        'type' : '',
+        'by' : '',
+        'time' : 0,
+        'text' : '',
+        'dead' : false,
+        'parent' : 0,
+        'kids' : [],
+        'url' : '',
+        'score' : 0,
+        'title' : '',
+        'descendants' : 0,
       };
       return Response(json.encode(jsonMap), 200);
     });
