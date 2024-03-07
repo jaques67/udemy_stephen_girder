@@ -13,7 +13,7 @@ class NewsApiProvider {
         .get(Uri.parse('$_root/topstories.json'));
     final ids = jsonDecode(response.body);
 
-    return ids;
+    return ids.cast<int>();
   }
 
   Future<ItemModel> fetchItem(int id) async {
