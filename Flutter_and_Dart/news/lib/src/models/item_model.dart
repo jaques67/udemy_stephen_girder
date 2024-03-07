@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class ItemModel {
   final int id;
   final bool deleted;
@@ -13,18 +15,33 @@ class ItemModel {
   final String title;
   final int descendants;
 
-  ItemModel.fromJSON(Map<String, dynamic> parsedJSon)
-    : id = parsedJSon['id'],
-      deleted = parsedJSon['deleted'] ?? false,
-      type = parsedJSon['type'] ?? '',
-      by = parsedJSon['by'] ?? '',
-      time = parsedJSon['time'] ?? 0,
-      text = parsedJSon['text'] ?? '',
-      dead = parsedJSon['dead'] ?? false,
-      parent = parsedJSon['parent'] ?? 0,
-      kids = parsedJSon['kids'] ?? [],
-      url = parsedJSon['url'] ?? '',
-      score = parsedJSon['score'] ?? 0,
-      title = parsedJSon['title'] ?? '',
-      descendants = parsedJSon['descendants'] ?? 0;
+  ItemModel.fromJson(Map<String, dynamic> parsedJSon)
+      : id = parsedJSon['id'],
+        deleted = parsedJSon['deleted'],
+        type = parsedJSon['type'],
+        by = parsedJSon['by'],
+        time = parsedJSon['time'],
+        text = parsedJSon['text'],
+        dead = parsedJSon['dead'],
+        parent = parsedJSon['parent'],
+        kids = parsedJSon['kids'],
+        url = parsedJSon['url'],
+        score = parsedJSon['score'],
+        title = parsedJSon['title'],
+        descendants = parsedJSon['descendants'];
+
+  ItemModel.fromDb(Map<String, dynamic> parsedJSon)
+      : id = parsedJSon['id'],
+        deleted = parsedJSon['deleted'] == 1,
+        type = parsedJSon['type'],
+        by = parsedJSon['by'],
+        time = parsedJSon['time'],
+        text = parsedJSon['text'],
+        dead = parsedJSon['dead'] == 1,
+        parent = parsedJSon['parent'],
+        kids = jsonDecode(parsedJSon['kids']),
+        url = parsedJSon['url'],
+        score = parsedJSon['score'],
+        title = parsedJSon['title'],
+        descendants = parsedJSon['descendants'];
 }

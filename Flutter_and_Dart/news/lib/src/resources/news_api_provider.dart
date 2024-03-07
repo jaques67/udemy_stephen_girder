@@ -20,6 +20,6 @@ class NewsApiProvider {
         .get(Uri.parse('$_root/item/$id.json'));
     final parsedJson = jsonDecode(response.body);
 
-    return ItemModel.fromJSON(parsedJson);
+    return ItemModel.fromJson(parsedJson);
   }
 }

@@ -46,7 +46,7 @@ class NewsDbProvider {
     );
 
     if (maps.isNotEmpty) {
-
+      return ItemModel.fromDb(maps.first);
     }
 
     return null;
