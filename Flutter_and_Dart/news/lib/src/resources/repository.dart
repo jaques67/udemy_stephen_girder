@@ -17,14 +17,21 @@ class Repository {
     return apiProvider.fetchTopIds();
   }
 
-  Future<ItemModel> fetchItem(int id) async {
-    var item = await dbProvider.fetchItem(id);
-    if (item != null) {
-      return item;
+  Future<ItemModel?> fetchItem(int id) async {
+    ItemModel? item;
+    Source source;
+
+    for (source in sources) {
+      item = await source.fetchItem(id);
+      if (item != null) {
+        break;
+      }
     }
 
-    item = await apiProvider.fetchItem(id);
-    dbProvider.addItem(item);
+    for (var cache in caches) {
+      cache.addItem(item);
+    }
+
     return item;
   }
 }
@@ -35,5 +42,5 @@ abstract class Source {
 }
 
 abstract class Cache {
-  Future<int> addItem(ItemModel item);
+  Future<int> addItem(ItemModel? item);
 }
