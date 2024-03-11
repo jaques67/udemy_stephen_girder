@@ -54,8 +54,8 @@ class NewsDbProvider implements Source, Cache {
     return null;
   }
 
-  Future<int> addItem(ItemModel item) {
-    return db.insert("Items", item.toMap());
+  Future<int> addItem(ItemModel? item) {
+    return db.insert("Items", item!.toMap());
   }
 
   @override
@@ -64,3 +64,5 @@ class NewsDbProvider implements Source, Cache {
     throw UnimplementedError();
   }
 }
+
+final newsDbProvider = NewsDbProvider();
