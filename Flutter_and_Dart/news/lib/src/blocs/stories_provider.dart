@@ -4,7 +4,7 @@ import 'stories_bloc.dart';
 class StoriesProvider extends InheritedWidget {
   late final StoriesBloc bloc;
 
-  StoriesProvider({Key key, Widget child})
+  StoriesProvider({required Key key, required Widget child})
       : bloc = StoriesBloc(),
         super(key: key, child: child);
 
