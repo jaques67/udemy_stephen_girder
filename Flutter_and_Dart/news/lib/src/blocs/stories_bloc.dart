@@ -8,7 +8,7 @@ class StoriesBloc {
   final _topIds = PublishSubject<List<int>>();
   final _items = BehaviorSubject<int>();
 
-  late Stream<Map<int, Future<ItemModel>>> items;
+  late Stream<Map<int, Future<ItemModel?>>> items;
 
   // Getters to Streams
   Stream<List<int>> get topIds => _topIds.stream;
