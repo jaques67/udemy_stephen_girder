@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news/src/blocs/stories_bloc.dart';
 import '../blocs/stories_provider.dart';
+import '../widgets/news_list_tile.dart';
 
 class NewsList extends StatelessWidget {
   Widget build(context) {
@@ -32,7 +33,10 @@ class NewsList extends StatelessWidget {
           itemCount: snapshot.data?.length,
           itemBuilder: (context, int index) {
             // return Text(snapshot.data?[index].toString() ?? 'Loading...');
-            return Text('${snapshot.data?[index]}');
+            bloc.fetchItem(snapshot.data![index]); // Here's the line you're missing.
+            return NewsListTile(
+                itemId: snapshot.data![index],
+            );
           },
         );
       },

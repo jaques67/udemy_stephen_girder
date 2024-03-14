@@ -6,18 +6,19 @@ import '../resources/repository.dart';
 class StoriesBloc {
   final _repository = Repository();
   final _topIds = PublishSubject<List<int>>();
-  final _items = BehaviorSubject<int>();
-
-  late Stream<Map<int, Future<ItemModel?>>> items;
+  final _itemsOutput = BehaviorSubject<Map<int, Future<ItemModel?>>>();
+  final _itemsFetcher = PublishSubject<int>();
 
   // Getters to Streams
   Stream<List<int>> get topIds => _topIds.stream;
+  Stream<Map<int, Future<ItemModel?>>> get items => _itemsOutput.stream;
 
   // Getters to Sinks
-  Function(int) get fetchItem =>_items.sink.add;
+  Function(int) get fetchItem =>_itemsFetcher.sink.add;
 
+  // Forward everything that comes out of this stream to the ItemsOutput controller
   StoriesBloc() {
-    items = _items.stream.transform(_itemsTransformer());
+    _itemsFetcher.stream.transform(_itemsTransformer()).pipe(_itemsOutput);
   }
 
   fetchTopIds() async {
@@ -38,6 +39,7 @@ class StoriesBloc {
 // No longer required
 // dispose(){
 //   _topIds.close();
-//   _items.close();
+//   _itemsFetcher.close();
+//   _itemsOutput.close()
 // }
 }
