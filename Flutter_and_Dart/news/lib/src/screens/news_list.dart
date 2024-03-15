@@ -13,7 +13,7 @@ class NewsList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Top News'),
+        title: const Text('Top News'),
       ),
       body: buildList(bloc!),
     );
